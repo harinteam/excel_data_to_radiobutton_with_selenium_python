@@ -1,7 +1,11 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.common.by import By
+from selenium.webdriver.chrome.options import Options
 from openpyxl import load_workbook
+
+options = Options()
+options.experimental_options('excludeSwitches', ['enable-logging'])
 
 service = ChromeService(executable_path="C:\chromedriver\chromedriver.exe")
 driver = webdriver.Chrome(service=service)
